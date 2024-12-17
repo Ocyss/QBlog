@@ -4,6 +4,7 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
   antfu({
+    jsx: true,
     rules: {
       'no-console': 'off',
     },

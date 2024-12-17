@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@import "./scrollbar.css";
+
+@plugin "@tailwindcss/typography";
+
+@import 'lenis/dist/lenis.css';
+
+:root {
+  /* Main background color */
+  --ui-bg: var(--color-sky-50);
+  /* Subtle background */
+  --ui-bg-muted: var(--color-sky-100);
+  /* Slightly elevated background */
+  --ui-bg-elevated: var(--color-blue-100);
+  /* More prominent background */
+  --ui-bg-accented: var(--color-sky-200);
+  /* Inverted background color */
+  --ui-bg-inverted: var(--color-sky-900);
+
+  --ui-bg-code: #F8FAFC;
+
+  --ui-border-muted: var(--color-sky-300);
+  .u-dark-only {
+    display: none;
+  }
+  .u-light-only {
+    display: unset;
+  }
+}
+
+/* One Dark Theme */
+.dark {
+  /* Main background color */
+  --ui-bg: #27272B;
+  /* Subtle background */
+  --ui-bg-muted: #262A31;
+  /* Slightly elevated background */
+  --ui-bg-elevated: #1E2227;
+  /* More prominent background */
+  --ui-bg-accented: #3e4451;
+  /* Inverted background color */
+  --ui-bg-inverted: #abb2bf;
+
+  --ui-bg-code: #262A31;
+
+  --ui-border-muted: #3e4451;
+
+  .u-light-only {
+    display: none;
+  }
+  .u-dark-only {
+    display: unset;
+  }
+}
+
+
+.u-float-btn {
+  @apply bg-white text-[var(--ui-bg-inverted)] hover:bg-gray-300
+  dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer transition-shadow
+  shadow-[2px_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_12px_rgba(0,0,0,0.15)]
+  dark:shadow-[2px_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[4px_4px_12px_rgba(0,0,0,0.4)]
+}
+
+
+.heading-anchor {
+  @apply no-underline hover:underline
+}
