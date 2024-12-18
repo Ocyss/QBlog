@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/mdc',
     '@pinia/nuxt',
-    '@nuxthq/studio',
     '@nuxt/content',
     'nuxt-echarts',
   ],
@@ -57,6 +56,9 @@ export default defineNuxtConfig({
     watch: {
       enabled: true,
       // ws: true,
+    },
+    studio: {
+      enabled: true,
     },
   },
 })
