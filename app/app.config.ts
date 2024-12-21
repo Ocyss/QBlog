@@ -1,12 +1,4 @@
 export default defineAppConfig({
-  site: {
-    // url: '',
-    // name: '',
-    // author: 'Ocyss',
-    // longAuthor: 'Ocyss_04',
-    // homepage: 'https://github.com/Ocyss',
-    // description: 'Ocyss\'s Blog',
-  },
   ui: {
     colors: {
       primary: 'sky',

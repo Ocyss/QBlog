@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  appConfig: {
+  runtimeConfig: {
     site: {
-      url: import.meta.env.NUXT_SITE_URL,
-      name: import.meta.env.NUXT_SITE_NAME,
-      author: import.meta.env.NUXT_SITE_AUTHOR,
-      longAuthor: import.meta.env.NUXT_SITE_LONG_AUTHOR,
-      homepage: import.meta.env.NUXT_SITE_HOMEPAGE,
-      description: import.meta.env.NUXT_SITE_DESCRIPTION,
+      url: '',
+      name: '',
+      author: '',
+      longAuthor: '',
+      homepage: '',
+      description: '',
     },
   },
   future: {
@@ -78,6 +78,11 @@ export default defineNuxtConfig({
     },
     studio: {
       enabled: true,
+      gitInfo: {
+        name: 'QBlog',
+        owner: 'Ocyss',
+        url: 'https://github.com/Ocyss/QBlog',
+      },
     },
   },
 })
