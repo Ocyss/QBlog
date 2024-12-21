@@ -1,0 +1,61 @@
+name: auto build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [23]
+    outputs:
+      current_time: ${{ steps.current_time.outputs.current_time }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Get current time
+        id: current_time
+        run: echo "current_time=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: .output/*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: write
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: .output
+      - name: ls .output
+        run: ls -la .output/*
+
+      - name: Release
+        uses: softprops/action-gh-release@v2.0.4
+        with:
+          name: ${{needs.build.outputs.current_time}}
+          fail_on_unmatched_files: true
+          files: .output/**
