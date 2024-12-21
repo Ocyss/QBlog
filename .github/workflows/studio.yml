@@ -40,8 +40,10 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: output-files
-          path: .output/
+          include-hidden-files: true
+          path: .output/*
+          if-no-files-found: error
+          compression-level: 9
 
   release:
     needs: build
@@ -53,7 +55,6 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: output-files
           path: .output
       - name: ls .output
         run: ls -la .output/*
@@ -63,4 +64,4 @@ jobs:
         with:
           name: ${{needs.build.outputs.current_time}}
           fail_on_unmatched_files: true
-          files: .output/**/*
+          files: .output/**
