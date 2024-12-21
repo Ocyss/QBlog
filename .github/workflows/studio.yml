@@ -106,5 +106,5 @@ jobs:
             rm -rf old_output
             mv .output old_output
             wget https://github.com/Ocyss/QBlog/releases/latest/download/release.tgz -O output.tgz
-            tar -zxvf output.tgz
+            mkdir -p .output && tar -zxvf output.tgz -C .output
             ${{ secrets.PM2_PATH || 'pm2' }} reload ecosystem.config.js
