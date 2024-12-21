@@ -47,6 +47,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: output
           include-hidden-files: true
           path: .output/*
           if-no-files-found: error
@@ -63,13 +64,14 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
+          name: output
           path: .output
 
       - name: ls .output
-        run: ls -la .output/artifact
+        run: ls -la .output
 
       - name: tar .output
-        run: tar -zcvf release.tgz .output/artifact
+        run: tar -zcvf release.tgz -C .output .
 
       - name: Release
         uses: softprops/action-gh-release@v2.0.4
@@ -105,4 +107,4 @@ jobs:
             mv .output old_output
             wget https://github.com/Ocyss/QBlog/releases/latest/download/release.tgz -O output.tgz
             tar -zxvf output.tgz
-            pm2 reload ecosystem.config.js
+            ${{ secrets.PM2_PATH || 'pm2' }} reload ecosystem.config.js
