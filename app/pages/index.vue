@@ -15,8 +15,12 @@ const { data: tempAboutData } = await useAsyncData('tempAboutData', () => {
 <template>
   <div>
     <NuxtLayout name="default">
-      <template #header-right>
-        <AppRightSidebar ref="rightContentEl" />
+      <template #header>
+        <AppHeader>
+          <template #right>
+            <AppRightSidebar ref="rightContentEl" />
+          </template>
+        </AppHeader>
       </template>
       <main>
         <div class="h-screen overflow-hidden">

@@ -7,7 +7,7 @@ description: 有一说一Bspwm+polybar+picom，真的爽，丝滑又好看～
 tags:
   - Arch
   - 美化
-public: true
+published: true
 ---
 
 > 什么你说配置麻烦？~~抄~~借鉴大佬们的配置文件就好了。

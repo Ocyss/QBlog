@@ -8,7 +8,7 @@ tags:
   - Windows
   - Linux
   - 踩坑日记
-public: true
+published: true
 ---
 
 # 一.更换终端

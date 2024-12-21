@@ -21,7 +21,7 @@ const { data: articles } = await useAsyncData(
         (query) => {
           query = query
             .where('extension', '=', 'md')
-            .where('public', '=', 1)
+            .where('published', '=', 1)
           if (path.value)
             query = query.where('path', 'LIKE', `${path.value}%`)
           return query
@@ -40,7 +40,7 @@ const { data: articles } = await useAsyncData(
         const paths = article.path.split('/').slice(2, -1)
         const categories = paths.map((_, index) => {
           const pathSegment = `/article/${paths.slice(0, index + 1).join('/')}`
-          return navigationPathToTitle[pathSegment]
+          return navigationPathToTitle[pathSegment]?.title
         })
         const category = categories.join(' • ')
         let description = article.description

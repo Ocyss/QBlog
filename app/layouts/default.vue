@@ -20,11 +20,9 @@ defineExpose({
 
 <template>
   <div class="flex flex-col h-screen" :class="layoutProps.ui?.root">
-    <AppHeader>
-      <template #right>
-        <slot name="header-right" />
-      </template>
-    </AppHeader>
+    <slot name="header">
+      <AppHeader />
+    </slot>
     <div ref="mainContent" class="h-full overflow-y-auto" :class="layoutProps.ui?.main">
       <slot />
       <slot name="footer">

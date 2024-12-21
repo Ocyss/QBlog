@@ -8,7 +8,7 @@ tags:
   - Linux
   - Arch
   - 记录
-public: true
+published: true
 ---
 
 > 2023-07-26 14:45:58

@@ -6,7 +6,7 @@ export default defineContentConfig({
       type: 'page',
       source: 'article/**',
       schema: z.object({
-        public: z.boolean().default(false),
+        published: z.boolean().default(false),
         createdAt: z.string(),
         updatedAt: z.string().optional(),
         image: z.string().optional(),

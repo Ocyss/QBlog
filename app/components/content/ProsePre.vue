@@ -44,7 +44,7 @@ const parsedMeta = computed(() => {
 const config = useAppConfig()
 
 const icon = computed(() => {
-  const iconMap = config.shadcnDocs.content.codeIcon
+  const iconMap = config.content.codeIcon
   const filenameLow = props.filename?.toLowerCase()
   return parsedMeta.value.get('icon') || (filenameLow && iconMap[filenameLow]) || (props.language && iconMap[props.language])
 })

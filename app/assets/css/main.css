@@ -9,19 +9,19 @@
 
 :root {
   /* Main background color */
-  --ui-bg: var(--color-sky-50);
+  --ui-bg: #F7F8FC;
   /* Subtle background */
-  --ui-bg-muted: var(--color-sky-100);
+  --ui-bg-muted: #EEF0F7;
   /* Slightly elevated background */
-  --ui-bg-elevated: var(--color-blue-100);
+  --ui-bg-elevated: #E8EEFF;
   /* More prominent background */
-  --ui-bg-accented: var(--color-sky-200);
+  --ui-bg-accented: #E1E5F2;
   /* Inverted background color */
-  --ui-bg-inverted: var(--color-sky-900);
+  --ui-bg-inverted: #1A1C25;
 
-  --ui-bg-code: #F8FAFC;
+  --ui-bg-code: #F3F6FF;
 
-  --ui-border-muted: var(--color-sky-300);
+  --ui-border-muted: #C5CAD9;
   .u-dark-only {
     display: none;
   }

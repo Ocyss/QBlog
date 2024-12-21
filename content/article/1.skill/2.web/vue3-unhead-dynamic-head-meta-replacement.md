@@ -7,7 +7,7 @@ description: 可以算是 vue-meta 的替代品了，并且还可以在路由守
 tags:
   - 前端
   - Vue3
-public: true
+published: true
 ---
 
 > 在网上想找可以动态设置head的vue插件的时候发现了vue-meta，但是在2021就已经停更了
@@ -51,7 +51,7 @@ const head = createHead()
 Vue.use(Vue2ProvideUnheadPlugin, head)
 Vue.use(head)
 
-new Vue({
+Vue({
   el: '#app',
 })
 ```

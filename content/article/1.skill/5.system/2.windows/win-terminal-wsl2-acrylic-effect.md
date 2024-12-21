@@ -8,7 +8,7 @@ tags:
   - Windows
   - Linux
   - 踩坑日记
-public: true
+published: true
 ---
 
 # 打开毛玻璃效果
@@ -23,10 +23,10 @@ public: true
 "useAcrylicInTabRow": true
 ```
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679137804431419871.png)
+![标签页毛玻璃配置](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679137804431419871.png)
 
 ## 终端毛玻璃
 
 设置 --> 默认值 --> 其他设置 --> 外观 --> 下拉找到透明度 --> 启用亚克力不透明度调到70%
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679137518846721308.png)
+![终端毛玻璃配置](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679137518846721308.png)

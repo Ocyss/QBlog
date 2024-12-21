@@ -4,7 +4,7 @@ import type { ArticleNavItem } from '~/types/article'
 
 // 使用 useState 替代 ref，确保状态在服务端和客户端之间同步
 const useNavigationStore = () => useState<ArticleNavItem[] | null>('navigation', () => null)
-const usePathTitleMapStore = () => useState<Record<string, string>>('pathTitleMap', () => ({}))
+const usePathTitleMapStore = () => useState<Record<string, ArticleNavItem>>('pathTitleMap', () => ({}))
 
 function getChildren(child: ContentNavigationItem): DropdownMenuItem {
   return {
@@ -45,7 +45,7 @@ async function initNavigationData() {
         // 处理导航项目并更新缓存
         function processItems(items: ContentNavigationItem[]): ContentNavigationItem[] {
           return items.map((item) => {
-            pathTitleMapStore.value[item.path] = item.title
+            pathTitleMapStore.value[item.path] = item
 
             const filtered = { ...item }
             if (item.children) {
@@ -81,7 +81,7 @@ export async function useNavigation() {
   return navigationStore.value
 }
 
-export async function useNavigationPathToTitle(): Promise<Record<string, string>> {
+export async function useNavigationPathToTitle() {
   const navigationStore = useNavigationStore()
   const pathTitleMapStore = usePathTitleMapStore()
   if (!navigationStore.value) {

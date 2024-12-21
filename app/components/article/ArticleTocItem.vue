@@ -47,7 +47,7 @@ const itemState = computed(() => {
       :style="itemStyle"
     >
       <div
-        class="absolute left-0 top-0 w-0.5 h-full rounded-r transform transition-all duration-300"
+        class="absolute left-0 top-0 w-0.5 h-full rounded-r transform transition-all duration-300 "
         :class="[
           {
             active: 'opacity-100 scale-100 bg-[var(--ui-primary)]',
@@ -58,7 +58,7 @@ const itemState = computed(() => {
       />
       <a
         :href="`#${item.id}`"
-        class="flex-1 py-2 px-3 transition-all duration-200"
+        class="flex-1 py-2 px-3 transition-all duration-200 whitespace-nowrap"
         :class="[
           {
             active: 'text-[var(--ui-primary)] font-medium translate-x-0.5',

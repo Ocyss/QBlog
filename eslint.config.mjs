@@ -9,4 +9,10 @@ export default withNuxt(
       'no-console': 'off',
     },
   }),
+  {
+    files: ['**/*.md'],
+    rules: {
+      'style/no-tabs': 'off',
+    },
+  },
 )

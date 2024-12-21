@@ -16,12 +16,11 @@ logs
 # Misc
 .DS_Store
 .fleet
-.idea
+**/.idea
+**/.git
 
 # Local env files
 .env
 .env.*
-!.env.example
 
 /temp.local
-.eslintcache

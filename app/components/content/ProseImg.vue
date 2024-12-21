@@ -1,37 +1,29 @@
-<template>
-  <component
-    :is="ImageComponent"
-    :src="refinedSrc"
-    :alt="props.alt"
-    :width="props.width"
-    :height="props.height"
-  />
-</template>
-
 <script setup lang="ts">
-import { withTrailingSlash, withLeadingSlash, joinURL } from 'ufo'
-import { useRuntimeConfig, computed } from '#imports'
+import { computed, useRuntimeConfig } from '#imports'
 
-import ImageComponent from '#build/mdc-image-component.mjs'
+import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo'
 
 const props = defineProps({
   src: {
     type: String,
-    default: ''
+    default: '',
   },
   alt: {
     type: String,
-    default: ''
+    default: '',
   },
   width: {
     type: [String, Number],
-    default: undefined
+    default: undefined,
   },
   height: {
     type: [String, Number],
-    default: undefined
-  }
+    default: undefined,
+  },
 })
+const { addImage } = useImagePreview()
+
+const preview = addImage({ image: { url: props.src, alt: props.alt } })
 
 const refinedSrc = computed(() => {
   if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
@@ -43,3 +35,14 @@ const refinedSrc = computed(() => {
   return props.src
 })
 </script>
+
+<template>
+  <img
+    :src="refinedSrc"
+    :alt="props.alt"
+    :width="props.width"
+    :height="props.height"
+    class="cursor-zoom-in"
+    @click="preview"
+  >
+</template>

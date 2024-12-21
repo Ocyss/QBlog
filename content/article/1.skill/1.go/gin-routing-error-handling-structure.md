@@ -4,7 +4,10 @@ createdAt: 2023/08/02 14:06
 updatedAt: 2023/08/02 14:16
 image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1690985751196238315.png
 description: 能直接return 结果的感觉真的太棒了
-public: true
+tags:
+  - go
+  - gin
+published: true
 ---
 
 ## 使用方法"封装"
@@ -52,6 +55,7 @@ func ErrParam(c *gin.Context, err ...error) {
 }
 
 ```
+
 ### 优点
 - 确实简单
 - 一眼就明白
