@@ -67,12 +67,15 @@ jobs:
       - name: ls .output
         run: ls -la .output/*
 
+      - name: tar .output
+        run: tar -zcvf release.tgz .output
+
       - name: Release
         uses: softprops/action-gh-release@v2.0.4
         if: startsWith(github.ref, 'refs/tags/')
         with:
           fail_on_unmatched_files: true
-          files: .output/**
+          files: release.tgz
 
       - name: Prerelease
         uses: softprops/action-gh-release@v2.0.4
@@ -82,7 +85,7 @@ jobs:
           tag_name: ${{needs.build.outputs.current_time}}
           fail_on_unmatched_files: true
           # prerelease: true
-          files: .output/**
+          files: release.tgz
 
   deploy:
     needs: release
