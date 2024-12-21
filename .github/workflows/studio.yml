@@ -64,11 +64,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: .output
+
       - name: ls .output
-        run: ls -la .output/*
+        run: ls -la .output/artifact
 
       - name: tar .output
-        run: tar -zcvf release.tgz .output
+        run: tar -zcvf release.tgz .output/artifact
 
       - name: Release
         uses: softprops/action-gh-release@v2.0.4
@@ -104,3 +105,4 @@ jobs:
             mv .output old_output
             wget https://github.com/Ocyss/QBlog/releases/latest/download/release.tgz -O output.tgz
             tar -zxvf output.tgz
+            pm2 reload ecosystem.config.js

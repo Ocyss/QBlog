@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     // 'nuxt-link-checker',
     'nuxt-seo-utils',
+    'nuxt-umami'
   ],
   schemaOrg: {
     identity: 'Organization',
@@ -84,5 +85,17 @@ export default defineNuxtConfig({
         url: 'https://github.com/Ocyss/QBlog',
       },
     },
+  },
+  umami: {
+    autoTrack: true,
+    ignoreLocalhost: true,
+    // proxy: 'cloak',
+    // useDirective: true,
+    // excludeQueryParams: false,
+    // domains: ['cool-site.app', 'my-space.site'],
+    // customEndpoint: '/my-custom-endpoint',
+    // enabled: false,
+    // logErrors: true,
+    // tag: 'website-variation-123',
   },
 })
