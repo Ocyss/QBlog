@@ -35,12 +35,12 @@ jobs:
         run: pnpm run build
 
       - name: ls .output
-        run: ls -la .
+        run: ls -la . && ls -la .output
         
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: .output/*
+          path: ./.output/*
 
   release:
     needs: build
