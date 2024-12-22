@@ -19,6 +19,9 @@ jobs:
         node-version: [23]
     outputs:
       current_time: ${{ steps.current_time.outputs.current_time }}
+    env:
+      NUXT_UMAMI_HOST: ${{ secrets.NUXT_UMAMI_HOST }}
+      NUXT_UMAMI_ID: ${{ secrets.NUXT_UMAMI_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
