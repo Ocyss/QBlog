@@ -98,53 +98,62 @@ onMounted(() => {
       next()
   })
 })
+const content = templateRef('content')
+onClickOutside(content, () => {
+  close()
+})
 </script>
 
 <template>
   <UModal
     v-model:open="visible"
     :ui="{
-      content: 'w-screen md:max-w-[80vw] !max-w-none !h-auto bg-transparent sm:shadow-none sm:ring-0 flex items-center justify-center !pointer-events-none *:pointer-events-auto',
+      content: 'w-screen !h-screen !max-h-none !max-w-screen bg-neutral-900/80 sm:shadow-none sm:ring-0',
     }"
   >
     <template v-if="current" #content>
-      <div v-if="current.images.length > 1" class="absolute md:px-10  w-full -bottom-6 md:bottom-1/2 flex items-center justify-between *:text-2xl *:cursor-pointer !pointer-events-none *:pointer-events-auto">
-        <!-- 导航按钮 - 上一张 -->
-        <UButton
-          color="neutral"
-          variant="solid"
-          :disabled="current.currentIndex === 0"
-          @click="prev"
+      <div ref="content" class="w-screen md:max-w-[80vw] flex flex-col items-center justify-center h-auto m-auto">
+        <div
+          v-if="current.images.length > 1"
+          class="absolute md:px-10 w-full
+          bottom-1/4 md:bottom-1/2
+          flex items-center justify-between *:text-2xl *:cursor-pointer"
         >
-          ‹
-        </UButton>
+          <!-- 导航按钮 - 上一张 -->
+          <UButton
+            variant="solid"
+            :disabled="current.currentIndex === 0"
+            @click="prev"
+          >
+            ‹
+          </UButton>
 
-        <!-- 导航按钮 - 下一张 -->
-        <UButton
-          color="neutral"
-          variant="solid"
-          :disabled="current.currentIndex === current.images.length - 1"
-          @click="next"
-        >
-          ›
-        </UButton>
-      </div>
-
-      <!-- 图片容器 -->
-
-      <img
-        :src="current.images[current.currentIndex]?.url"
-        alt="preview"
-        class="py-8 px-0 md:p-8 max-w-full max-h-[90vh] object-contain w-fit pointer-events-auto"
-      >
-
-      <!-- 计数器 -->
-      <div class="absolute -bottom-4  text-white flex flex-col items-center pointer-events-auto">
-        <div v-if="current.images[current.currentIndex]?.alt" class="text-sm">
-          {{ current.images[current.currentIndex]?.alt }}
+          <!-- 导航按钮 - 下一张 -->
+          <UButton
+            variant="solid"
+            :disabled="current.currentIndex === current.images.length - 1"
+            @click="next"
+          >
+            ›
+          </UButton>
         </div>
-        <div v-if="current.images.length > 1" class="text-sm">
-          {{ current.currentIndex + 1 }}/{{ current.images.length }}
+
+        <!-- 图片容器 -->
+
+        <img
+          :src="current.images[current.currentIndex]?.url"
+          alt="preview"
+          class="py-8 px-0 md:p-8 max-w-full max-h-[90vh] object-contain w-fit pointer-events-auto"
+        >
+
+        <!-- 计数器 -->
+        <div class="absolute md:relative bottom-1/4 text-white flex flex-col items-center pointer-events-auto">
+          <div v-if="current.images[current.currentIndex]?.alt" class="text-sm">
+            {{ current.images[current.currentIndex]?.alt }}
+          </div>
+          <div v-if="current.images.length > 1" class="text-sm">
+            {{ current.currentIndex + 1 }}/{{ current.images.length }}
+          </div>
         </div>
       </div>
     </template>
