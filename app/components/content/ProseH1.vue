@@ -8,7 +8,7 @@ const generate = computed(() => link ?? (props.id && ((typeof headings?.anchorLi
 </script>
 
 <template>
-  <h1 :id="props.id">
+  <h2 :id="props.id" class="text-2xl font-bold">
     <a
       v-if="generate"
       :href="`#${props.id}`"
@@ -17,5 +17,5 @@ const generate = computed(() => link ?? (props.id && ((typeof headings?.anchorLi
       <slot />
     </a>
     <slot v-else />
-  </h1>
+  </h2>
 </template>
