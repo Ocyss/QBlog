@@ -7,6 +7,8 @@
 
 @import 'lenis/dist/lenis.css';
 
+@source '../../../content/**/*';
+
 :root {
   /* Main background color */
   --ui-bg: #F7F8FC;

@@ -69,5 +69,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true
-  }
+  },
+  "editor.gotoLocation.multipleDefinitions": "goto"
 }

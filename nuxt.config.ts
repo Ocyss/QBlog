@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       homepage: '',
       description: '',
     },
+    githubToken: '',
   },
   future: {
     // https://github.com/nuxt/nuxt/pull/27029
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     // 'nuxt-link-checker',
     'nuxt-seo-utils',
-    'nuxt-umami'
+    'nuxt-umami',
   ],
   schemaOrg: {
     identity: 'Organization',

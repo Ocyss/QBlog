@@ -13,9 +13,9 @@ export default defineContentConfig({
         tags: z.array(z.string()).optional(),
       }),
     }),
-    other: defineCollection({
+    singles: defineCollection({
       type: 'page',
-      source: 'other/**',
+      source: 'singles/**',
     }),
   },
 })

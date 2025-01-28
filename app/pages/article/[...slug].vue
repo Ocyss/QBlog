@@ -57,7 +57,7 @@ definePageMeta({
                 <NavigationHeader />
               </div>
               <div
-                class="header-title absolute whitespace-nowrap text-xl font-bold select-none"
+                class="header-title absolute whitespace-nowrap text-xl font-bold select-none z-0"
                 :class="{ 'header-title-hide': titleShow, 'cursor-pointer': !titleShow }"
                 @click="scrollToTop"
               >

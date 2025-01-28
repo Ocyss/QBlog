@@ -1,14 +1,18 @@
 <script setup lang="ts">
 const lenis = inject(mainContentLenisKey)
 
+const sidebar = templateRef('sidebar')
+const sidebarIsVisible = useElementVisibility(sidebar)
+
 const contentStyle = computed(() => ({
   minHeight: `calc(var(--spacing) * 18)`,
-  height: `calc(100vh - 2rem - ${lenis?.value?.status?.scroll ?? 0}px)`,
+  height: sidebarIsVisible.value ? `calc(100vh - 2rem - ${lenis?.value?.status?.scroll ?? 0}px)` : '0px',
 }))
 </script>
 
 <template>
   <div
+    ref="sidebar"
     class="z-50 self-start relative -top-3 ml-4 w-[480px] h-[calc(100vh-2rem)]"
     :style="contentStyle"
   >

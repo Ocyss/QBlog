@@ -33,12 +33,14 @@
     "pinia": "^2.3.0",
     "tailwindcss": "4.0.0-beta.6",
     "text-search-engine": "^1.4.2",
+    "typed.js": "^2.1.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.11.2",
     "@tailwindcss/typography": "0.5.15",
+    "@types/typed.js": "^2.0.9",
     "eslint": "^9.15.0",
     "nuxt-echarts": "^0.2.4",
     "prettier": "^3.4.2",

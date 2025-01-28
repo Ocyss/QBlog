@@ -3,7 +3,7 @@ const navigation = await useNavigation()
 </script>
 
 <template>
-  <nav class="flex items-center space-x-4">
+  <nav class="md:flex hidden items-center space-x-4">
     <template
       v-for="item in navigation"
       :key="item.path"
@@ -21,7 +21,7 @@ const navigation = await useNavigation()
         arrow
       >
         <UButton
-          class="group flex items-center space-x-1 px-3 py-1.5 rounded-full u-float-btn transition-colors"
+          class="group flex items-center space-x-1 px-3 py-1.5 rounded-full u-float-btn transition-colors h-8"
           trailing-icon="i-iconamoon:arrow-down-2"
           size="xs"
           :icon="item.icon"
@@ -44,4 +44,13 @@ const navigation = await useNavigation()
     </template>
     <!-- <UNavigationMenu :items="navigationMenu" class="justify-center" /> -->
   </nav>
+  <!-- TODO: 性能优化 -->
+  <UButton
+    class="group flex md:hidden items-center space-x-1 px-3 py-1.5 rounded-full u-float-btn transition-colors h-8"
+    size="xs"
+    to="/article"
+    icon="i-lucide-book-open"
+  >
+    文章
+  </UButton>
 </template>
