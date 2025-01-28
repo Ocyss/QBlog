@@ -2,7 +2,7 @@
 title: Vue3 动态设置head插件unhead介绍- 支持标题模板，meta等。vue-meta 替代品
 createdAt: 2023/03/25 15:42
 updatedAt: 2023/03/25 15:43
-image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679730194529794500.png
+image: /static/Article/1679730194529794500.png
 description: 可以算是 vue-meta 的替代品了，并且还可以在路由守卫等外部使用api，封装好了所有head相关的api，方便到极致!!
 tags:
   - 前端

@@ -2,7 +2,7 @@
 title: Win终端+WSL2 美化记录 下篇 wsl终端美化+静态ip
 createdAt: 2023/03/24 02:53
 updatedAt: 2023/03/24 02:53
-image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679624474390073838.png
+image: /static/Article/1679624474390073838.png
 description: 简单的更换下终端，并且固定ip，方便和宿主机沟通
 tags:
   - Windows
@@ -53,7 +53,7 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 字体在 WIndows 系统上安装好，然后在终端配置里面更改 wsl 的字体
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679625801518824630.png)
+![](/static/Article/1679625801518824630.png)
 
 # 二.配置网络
 大部分参考CSDN [wsl2设置静态ip（固定ip）static ip - littlebird4](https://blog.csdn.net/littlebird4/article/details/126024621)
@@ -70,4 +70,4 @@ WSL的在 `/etc/hosts`
 在里面加一行 `172.22.0.1 win`
 这样直接`ping win`就能ping通了
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1679626392096498086.png)
+![](/static/Article/1679626392096498086.png)

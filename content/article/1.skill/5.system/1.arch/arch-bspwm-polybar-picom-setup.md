@@ -2,7 +2,7 @@
 title: Arch Bspwm+polybar+picom 配置分享
 createdAt: 2023/07/18 15:08
 updatedAt: 2023/07/18 15:08
-image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1689691256569689364.png
+image: /static/Article/1689691256569689364.png
 description: 有一说一Bspwm+polybar+picom，真的爽，丝滑又好看～
 tags:
   - Arch
@@ -12,7 +12,7 @@ published: true
 
 > 什么你说配置麻烦？~~抄~~借鉴大佬们的配置文件就好了。
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1689692857158667628.png)
+![](/static/Article/1689692857158667628.png)
 
 ## 我的应用
 桌面: bspwm
@@ -25,11 +25,11 @@ published: true
 音乐服务器: mpd
 音乐客户端: ncmpcpp,mpc,洛雪音乐
 视频播放器: mpv
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1689692891445651201.png)
+![](/static/Article/1689692891445651201.png)
 
 使用gh0stzk大佬的主题进行二改，自己写了点小组件（国内和风天气,歌词,电费），也没啥技术含量～
 
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1689692715401485707.png)
+![](/static/Article/1689692715401485707.png)
 ### 目前抄的配置有(github)：
 - ayamir-dwm
 - FT-labs

@@ -2,7 +2,7 @@
 title: 解决Fcitx5输入法打字过快漏字母的bug
 createdAt: 2023/07/24 09:17
 updatedAt: 2023/07/26 06:50
-image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1690189274062927708.png
+image: /static/Article/1690189274062927708.png
 description: 在使用edge浏览器，打开一快就漏一堆字母
 tags:
   - Linux
@@ -38,7 +38,7 @@ export XMODIFIERS="@im=fcitx"' >> /etc/profile
 >
 ## 3.Fcitx5 配置
 **关闭`在程序中显示预处理文本`**
-![](https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1690189955904023044.png)
+![](/static/Article/1690189955904023044.png)
 
 > 好吧，对我依旧无用
 

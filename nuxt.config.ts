@@ -10,6 +10,12 @@ export default defineNuxtConfig({
       description: '',
     },
     githubToken: '',
+    oss: {
+      region: '',
+      accessKeyId: '',
+      accessKeySecret: '',
+      bucket: '',
+    },
   },
   future: {
     // https://github.com/nuxt/nuxt/pull/27029

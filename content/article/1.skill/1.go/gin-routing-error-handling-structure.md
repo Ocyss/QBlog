@@ -2,7 +2,7 @@
 title: Gin 路由封装,统一返回结构体,错误处理
 createdAt: 2023/08/02 14:06
 updatedAt: 2023/08/02 14:16
-image: https://qiu-blog.oss-cn-hangzhou.aliyuncs.com/Article/1690985751196238315.png
+image: /static/Article/1690985751196238315.png
 description: 能直接return 结果的感觉真的太棒了
 tags:
   - go

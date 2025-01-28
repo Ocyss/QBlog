@@ -29,14 +29,14 @@ if (props.project) {
 else if (props.url) {
   const repoUrl = props.url.replace('https://github.com/', '')
   const { data } = await useAsyncData(`repo-${repoUrl}`, () => {
-    const Authorization = `Bearer ${useRuntimeConfig().githubToken}`
+    const Authorization = `token ${useRuntimeConfig().githubToken}`
     return Promise.all([
       $fetch<any>(`https://api.github.com/repos/${repoUrl}`, { headers: { Authorization } }),
       $fetch<any>(`https://api.github.com/repos/${repoUrl}/languages`, { headers: { Authorization } }),
     ])
   })
 
-  // console.log(Authorization, data)
+  // console.log(data.value)
 
   if (data.value) {
     const [repo, languages] = data.value
