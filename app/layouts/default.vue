@@ -16,6 +16,12 @@ defineExpose({
   lenis,
   mainContentEl,
 })
+
+onMounted(() => {
+  const temp = window.lenis || []
+  temp.push(lenis)
+  window.lenis = temp
+})
 </script>
 
 <template>
@@ -23,8 +29,8 @@ defineExpose({
     <slot name="header">
       <AppHeader />
     </slot>
-    <div ref="mainContent" class="h-full overflow-y-auto" :class="layoutProps.ui?.main">
-      <slot />
+    <div ref="mainContent" class="overflow-y-auto" :class="layoutProps.ui?.main">
+      <slot data-lenis-prevent />
       <slot name="footer">
         <AppFooter />
       </slot>

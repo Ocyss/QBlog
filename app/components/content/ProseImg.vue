@@ -20,10 +20,17 @@ const props = defineProps({
     type: [String, Number],
     default: undefined,
   },
+  preview: {
+    type: Boolean,
+    default: true,
+  },
 })
-const { addImage } = useImagePreview()
 
-const preview = addImage({ image: { url: props.src, alt: props.alt } })
+let preview: (() => void) | undefined
+if (props.preview) {
+  const { addImage } = useImagePreview()
+  preview = addImage({ image: { url: props.src, alt: props.alt } })
+}
 
 const refinedSrc = computed(() => {
   if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
@@ -42,7 +49,7 @@ const refinedSrc = computed(() => {
     :alt="props.alt"
     :width="props.width"
     :height="props.height"
-    class="cursor-zoom-in"
+    :class="{ 'cursor-zoom-in': props.preview }"
     @click="preview"
   >
 </template>

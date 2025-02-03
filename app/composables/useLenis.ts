@@ -55,6 +55,11 @@ export function useLenis(opt: Omit<LenisOptions, 'wrapper'> & {
         targetScroll: newScrollState.targetScroll,
       })
     })
+    // const { height } = useElementSize(opt.wrapper as Ref<HTMLElement>)
+    // watch(height, () => {
+    //   console.log(height.value)
+    //   lenis.value.instance?.resize()
+    // })
   })
 
   onBeforeUnmount(() => {

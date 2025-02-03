@@ -59,7 +59,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
 </script>
 
 <template>
-  <main class="min-h-screen  bg-[var(--ui-bg)]">
+  <main class="min-h-screen bg-[var(--ui-bg)]" data-lenis-prevent>
     <UProgress
       class="fixed top-0 left-0 right-0 z-50"
       :model-value="readingProgress"

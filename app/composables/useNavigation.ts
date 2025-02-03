@@ -45,27 +45,30 @@ async function initNavigationData() {
         // 处理导航项目并更新缓存
         function processItems(items: ContentNavigationItem[]): ContentNavigationItem[] {
           return items.map((item) => {
-            pathTitleMapStore.value[item.path] = item
+            if (!item.children) {
+              return undefined
+            }
 
             const filtered = { ...item }
-            if (item.children) {
-              if (item.children.some(child => child.children)) {
-                filtered.children = processItems(item.children)
-              }
-              else {
-                filtered._children = item.children
-                delete filtered.children
-              }
+            item.children = item.children.filter(v => !v.page)
+            if (item.children.some(child => child.children)) {
+              filtered.children = processItems(item.children)
+            }
+            else {
+              // filtered._children = item.children
+              delete filtered.children
             }
             const children = filtered.children?.map(getChildren)
             if (children && children.length > 0) {
               filtered.nav = children
             }
+            pathTitleMapStore.value[item.path] = item
             return filtered
-          })
+          }).filter(v => v !== undefined)
         }
 
         navigationStore.value = processItems(articleNavigation)
+        // console.log(JSON.stringify({ articleNavigation, navigationStore: navigationStore.value }, null, 2))
         return navigationStore.value
       },
     },

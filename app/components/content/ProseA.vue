@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+const props = withDefaults(defineProps<{
+  href: string
+  target?: '_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined
+  icon?: boolean
+}>(), {
+  href: '',
+  icon: true,
+  target: '_blank',
+})
 
-const props = defineProps({
-  href: {
-    type: String,
-    default: '',
-  },
-  target: {
-    type: String as PropType<'_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined>,
-    default: undefined,
-    required: false,
-  },
+const iconSrc = computed(() => {
+  if (!props.icon) {
+    return ''
+  }
+  return `https://toolb.cn/favicon/${new URL(props.href).hostname}`
 })
 </script>
 
@@ -18,7 +21,9 @@ const props = defineProps({
   <NuxtLink
     :href="props.href"
     :target="props.target"
+    class="inline gap-1"
   >
+    <img v-if="iconSrc" :src="iconSrc" class="inline size-[1.3em] not-prose user-select-none pointer-events-none">
     <slot />
   </NuxtLink>
 </template>
