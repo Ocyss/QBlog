@@ -17,7 +17,7 @@ const contentStyle = computed(() => ({
     :style="contentStyle"
   >
     <div
-      class="bg-[var(--ui-bg-elevated)] w-full h-full relative overflow-hidden rounded-[30px] origin-top-right transition-shadow
+      class="bg-(--ui-bg-elevated) w-full h-full relative overflow-hidden rounded-[30px] origin-top-right transition-shadow
     "
     >
       <div

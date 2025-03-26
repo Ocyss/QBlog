@@ -1,6 +1,7 @@
-import Lenis, { type LenisOptions } from 'lenis'
+import type { LenisOptions } from 'lenis'
+import Lenis from 'lenis'
 
-export type LenisStatus = Pick<Lenis, 'className' | 'isHorizontal' | 'isLocked' | 'isScrolling' | 'isSmooth' | 'isStopped' | 'limit' | 'progress' | 'rootElement' | 'scroll' | 'direction' | 'time' | 'animatedScroll' | 'velocity' | 'lastVelocity' | 'targetScroll' >
+export type LenisStatus = Pick<Lenis, 'className' | 'isHorizontal' | 'isLocked' | 'isScrolling' | 'isSmooth' | 'isStopped' | 'limit' | 'progress' | 'rootElement' | 'scroll' | 'direction' | 'time' | 'animatedScroll' | 'velocity' | 'lastVelocity' | 'targetScroll'>
 
 export interface LenisRef {
   instance: Lenis | null

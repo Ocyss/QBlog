@@ -9,18 +9,18 @@ const appConfig = useRuntimeConfig()
 
 <template>
   <div class="not-prose mt-8 md:mt-12 -mx-7 md:-mx-11">
-    <div class="relative overflow-hidden bg-[var(--ui-bg-accented)] p-6">
+    <div class="relative overflow-hidden bg-(--ui-bg-accented) p-6">
       <!-- 主要内容 -->
       <div class="space-y-6 relative z-10">
         <!-- 文章信息 -->
         <div>
-          <h4 class="font-medium text-base text-[var(--ui-text)]">
+          <h4 class="font-medium text-base text-(--ui-text)">
             {{ page.title }}
           </h4>
           <ULink
             :to="appConfig.site.url + page.path"
             target="_blank"
-            class="text-sm text-[var(--ui-text-muted)] hover:text-[var(--ui-text)]"
+            class="text-sm text-(--ui-text-muted) hover:text-(--ui-text)"
           >
             {{ appConfig.site.url }}{{ page.path }}
           </ULink>
@@ -30,24 +30,24 @@ const appConfig = useRuntimeConfig()
         <div class="flex items-center gap-3">
           <UIcon
             name="i-simple-icons:creativecommons"
-            class="size-5 text-[var(--ui-text-muted)]"
+            class="size-5 text-(--ui-text-muted)"
           />
           <div class="flex-1">
-            <p class="text-sm text-[var(--ui-text)] mb-1">
+            <p class="text-sm text-(--ui-text) mb-1">
               本文采用
               <ULink
                 href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
                 target="_blank"
-                class="font-medium hover:text-[var(--ui-primary)]"
+                class="font-medium hover:text-(--ui-primary)"
               >
                 CC BY-NC-SA 4.0
               </ULink>
               许可协议
             </p>
-            <p class="text-sm text-[var(--ui-text)]">
+            <p class="text-sm text-(--ui-text)">
               转载请注明作者
               <ULink
-                class="font-medium text-[var(--ui-text-muted)]"
+                class="font-medium text-(--ui-text-muted)"
                 :href="appConfig.site.homepage"
                 target="_blank"
               >

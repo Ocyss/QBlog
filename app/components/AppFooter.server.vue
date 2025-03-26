@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex justify-center w-full py-8 border-t border-[var(--ui-border-muted)]">
+  <footer class="flex justify-center w-full py-8 border-t border-(--ui-border-muted)">
     <div class="font-medium text-sm text-gray-600 dark:text-gray-400">
       Made with <UIcon name="i-material-symbols:favorite" class="text-red-500" /> by
       <a

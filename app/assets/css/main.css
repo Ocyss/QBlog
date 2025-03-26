@@ -62,9 +62,7 @@
 */
 @utility prose {
   code {
-    /* @apply bg-[var(--ui-bg-code)] mx-1 p-1 rounded text-sm; */
-
-    @apply px-1.5 py-0.5 text-sm font-mono font-medium rounded-[calc(var(--ui-radius)*1.5)] inline-block border border-[var(--ui-border-muted)] text-[var(--ui-text-highlighted)] bg-[var(--ui-bg-muted)];
+    @apply px-1.5 py-0.5 text-sm font-mono font-medium rounded-[calc(var(--ui-radius)*1.5)] inline-block border border-(--ui-border-muted) text-(--ui-text-highlighted) bg-(--ui-bg-muted);
     &::before {
       display: none;
     }
@@ -85,34 +83,34 @@
   table{
     @apply w-auto border-separate border-spacing-0 rounded-[calc(var(--ui-radius)*1.5)];
     thead{
-      @apply bg-[var(--ui-bg-muted)];
+      @apply bg-(--ui-bg-muted);
     }
     th{
-      @apply py-3 px-4 font-semibold text-sm text-left border-e border-b first:border-s border-t border-[var(--ui-border-muted)];
+      @apply py-3 px-4 font-semibold text-sm text-left border-e border-b first:border-s border-t border-(--ui-border-muted);
     }
     tr{
       @apply [&:first-child>th:first-child]:rounded-tl-[calc(var(--ui-radius)*1.5)] [&:first-child>th:last-child]:rounded-tr-[calc(var(--ui-radius)*1.5)] [&:last-child>td:first-child]:rounded-bl-[calc(var(--ui-radius)*1.5)] [&:last-child>td:last-child]:rounded-br-[calc(var(--ui-radius)*1.5)];
     }
     td{
-      @apply py-3 px-4 text-sm text-left align-top border-e border-b first:border-s border-[var(--ui-border-muted)] [&_code]:text-xs/5 [&_p]:my-0 [&_p]:leading-6 [&_ul]:my-0 [&_ol]:my-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:leading-6 [&_li]:my-0.5;
+      @apply py-3 px-4 text-sm text-left align-top border-e border-b first:border-s border-(--ui-border-muted) [&_code]:text-xs/5 [&_p]:my-0 [&_p]:leading-6 [&_ul]:my-0 [&_ol]:my-0 [&_ul]:ps-4.5 [&_ol]:ps-4.5 [&_li]:leading-6 [&_li]:my-0.5;
     }
   }
   h2{
     &::after{
       content: "§";
-      @apply text-[var(--ui-text-highlighted)] ms-2;
+      @apply text-(--ui-text-highlighted) ms-2;
     }
   }
   h3{
     &::before{
       content: "#";
-      @apply text-[var(--ui-text-highlighted)] me-2;
+      @apply text-(--ui-text-highlighted) me-2;
     }
   }
 }
 
 .u-float-btn {
-  @apply bg-white text-[var(--ui-bg-inverted)] hover:bg-gray-300
+  @apply bg-white text-(--ui-bg-inverted) hover:bg-gray-300
   dark:bg-gray-700 dark:hover:bg-gray-500 cursor-pointer transition-shadow
   shadow-[2px_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_12px_rgba(0,0,0,0.15)]
   dark:shadow-[2px_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[4px_4px_12px_rgba(0,0,0,0.4)]

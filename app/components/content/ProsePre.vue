@@ -69,41 +69,30 @@ function copyFilename() {
 </script>
 
 <template>
-  <div class="overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5">
-    <!-- 标题栏 -->
-    <div
-      class="
-      flex items-center bg-[var(--ui-bg-accented)] font-mono text-sm border-[0.5px]
-      border-[var(--ui-border-muted)] border-b-0 rounded-t-[calc(var(--ui-radius)*1.5)] px-4 py-3"
-    >
-      <UIcon v-if="icon" :name="icon" class="mr-1.5" />
-      <span>{{ filename ?? language }}</span>
-      <div class="ml-auto flex items-center gap-2">
+  <div class="my-6 overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
+    <div class="header flex items-center justify-between bg-gray-800 px-4 py-3 text-gray-200">
+      <div class="flex items-center">
+        <UIcon v-if="icon" :name="icon" class="mr-2 text-gray-400" />
+        <span class="font-mono text-sm font-medium">{{ filename ?? language }}</span>
+      </div>
+      <div class="flex items-center gap-2">
         <UTooltip text="复制代码">
           <UButton icon="heroicons:document-duplicate" variant="ghost" size="xs" @click="copyCode" />
         </UTooltip>
-        <UTooltip text="复制文件名">
+        <UTooltip v-if="filename" text="复制文件名">
           <UButton icon="heroicons:document-text" variant="ghost" size="xs" @click="copyFilename" />
         </UTooltip>
       </div>
     </div>
-    <!-- 代码块 -->
-    <div class="not-prose relative group bg-[var(--ui-bg-code)] border-[0.5px] border-[var(--ui-border-muted)]">
-      <pre
-        class="
-      overflow-x-auto p-3 font-mono text-sm
-      px-4 py-3 whitespace-pre-wrap break-words" :class="[props.class]"
-      ><slot /></pre>
-      <div
-        class="
-      pre-absolute-wrapper absolute right-3 top-2
-      opacity-0 group-hover:opacity-100 transition-opacity z-10 select-none"
-      >
+    <div class="relative group">
+      <pre class="overflow-x-auto font-mono text-sm" :class="[props.class]">
+        <slot />
+      </pre>
+      <div class="absolute right-4 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
         <UTooltip text="复制代码">
           <UButton
-            icon="heroicons:document-duplicate"
-            variant="ghost"
-            size="xs"
+            icon="heroicons:document-duplicate" variant="ghost" size="xs"
+            class="bg-gray-800/70 text-gray-300 hover:bg-gray-700 hover:text-white backdrop-blur-sm transition-all"
             @click="copyCode"
           />
         </UTooltip>
@@ -111,37 +100,3 @@ function copyFilename() {
     </div>
   </div>
 </template>
-
-<style>
-pre code .line {
-  display: block;
-}
-
-pre code {
-  display: block;
-  padding: 0.5rem 0;
-}
-</style>
-
-<style scoped>
-@import 'tailwindcss';
-
-pre {
-  position: relative;
-  margin: 0;
-}
-
-pre:hover .copy-button {
-  opacity: 1;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

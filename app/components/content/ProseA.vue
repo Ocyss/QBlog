@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  href: string
+  href?: string
   target?: '_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined
   icon?: boolean
 }>(), {

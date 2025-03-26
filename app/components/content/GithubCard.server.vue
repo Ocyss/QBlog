@@ -29,6 +29,9 @@ if (props.project) {
 else if (props.url) {
   const repoUrl = props.url.replace('https://github.com/', '')
   const { data } = await useAsyncData(`repo-${repoUrl}`, () => {
+    if (import.meta.client) {
+      return Promise.resolve(null)
+    }
     const Authorization = `token ${useRuntimeConfig().githubToken}`
     return Promise.all([
       $fetch<any>(`https://api.github.com/repos/${repoUrl}`, { headers: { Authorization } }),
@@ -89,7 +92,7 @@ function ActionLink({ name, link, icon }: { name: string, link: string, icon: st
   <div
     v-if="project"
     :key="project.title"
-    class="not-prose rounded-lg text-left bg-[var(--ui-bg)] flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-[var(--ui-bg)]"
+    class="not-prose rounded-lg text-left bg-(--ui-bg) flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-(--ui-bg)"
   >
     <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
       <img v-if="project.avatar" :src="project.avatar" alt="avatar" class="size-6 rounded-full">

@@ -20,6 +20,13 @@ export default defineNuxtConfig({
   future: {
     // https://github.com/nuxt/nuxt/pull/27029
     compatibilityVersion: 4,
+    typescriptBundlerResolution: true,
+  },
+  routeRules: {
+    '/': {
+      swr: 3600,
+    },
+    '/article/**': { isr: true },
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -32,16 +39,16 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-echarts',
     // '@nuxtjs/sitemap',
-    'nuxt-og-image',
+    // 'nuxt-og-image',
     // '@nuxtjs/robots',
-    'nuxt-schema-org',
+    // 'nuxt-schema-org',
     // 'nuxt-link-checker',
     'nuxt-seo-utils',
     'nuxt-umami',
   ],
-  schemaOrg: {
-    identity: 'Organization',
-  },
+  // schemaOrg: {
+  //   identity: 'Organization',
+  // },
   seo: {
     meta: {
       description: 'This is a demo of Nuxt SEO showcasing all of the modules.',
@@ -88,8 +95,8 @@ export default defineNuxtConfig({
       enabled: true,
       // ws: true,
     },
-    studio: {
-      enabled: true,
+    preview: {
+      api: 'https://api.nuxt.studio',
       gitInfo: {
         name: 'QBlog',
         owner: 'Ocyss',

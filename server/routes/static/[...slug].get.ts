@@ -1,5 +1,5 @@
 import { createHmac } from 'node:crypto'
-import { createError, defineEventHandler, getHeader, sendRedirect, setHeader } from 'h3'
+import { createError, defineEventHandler, sendRedirect, setHeader } from 'h3'
 
 interface OSSConfig {
   region: string

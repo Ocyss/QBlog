@@ -50,8 +50,8 @@ const itemState = computed(() => {
         class="absolute left-0 top-0 w-0.5 h-full rounded-r transform transition-all duration-300 "
         :class="[
           {
-            active: 'opacity-100 scale-100 bg-[var(--ui-primary)]',
-            parent: 'opacity-60 scale-90 bg-[var(--ui-primary)]/60',
+            active: 'opacity-100 scale-100 bg-(--ui-primary)',
+            parent: 'opacity-60 scale-90 bg-(--ui-primary)/60',
             normal: 'opacity-0 scale-75',
           }[itemState],
         ]"
@@ -61,9 +61,9 @@ const itemState = computed(() => {
         class="flex-1 py-2 px-3 transition-all duration-200 whitespace-nowrap"
         :class="[
           {
-            active: 'text-[var(--ui-primary)] font-medium translate-x-0.5',
-            parent: 'text-[var(--ui-primary)]/70 font-normal',
-            normal: 'text-gray-700 hover:text-[var(--ui-primary)] dark:text-gray-300',
+            active: 'text-(--ui-primary) font-medium translate-x-0.5',
+            parent: 'text-(--ui-primary)/70 font-normal',
+            normal: 'text-gray-700 hover:text-(--ui-primary) dark:text-gray-300',
           }[itemState],
           { 'font-medium': depth === 2 },
         ]"

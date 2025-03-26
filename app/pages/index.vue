@@ -77,7 +77,7 @@ useTyped(typedRef, {
             </div>
           </div>
         </div>
-        <div class="py-20 flex justify-center items-center bg-[var(--ui-bg-muted)]">
+        <div class="py-20 flex justify-center items-center bg-(--ui-bg-muted)">
           <ContentRenderer
             v-if="singlesHomeData"
             class="prose prose-lg dark:prose-invert

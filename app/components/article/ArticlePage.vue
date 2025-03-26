@@ -59,7 +59,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-[var(--ui-bg)]" data-lenis-prevent>
+  <main class="min-h-screen bg-(--ui-bg)" data-lenis-prevent>
     <UProgress
       class="fixed top-0 left-0 right-0 z-50"
       :model-value="readingProgress"
@@ -69,7 +69,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
     <div
       class="mx-auto w-full lg:max-w-[74rem] md:my-1 flex justify-between pt-10  py-8 rounded-lg relative"
     >
-      <div class="p-3 min-w-0 flex-1 mx-2 w-full md:w-[calc(100%_-_17rem)] bg-[var(--ui-bg-elevated)]">
+      <div class="p-3 min-w-0 flex-1 mx-2 w-full md:w-[calc(100%_-_17rem)] bg-(--ui-bg-elevated)">
         <article
           class="prose max-w-none border-highlight p-4 md:p-8 !pb-0 dark:prose-invert"
         >
@@ -77,12 +77,12 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
           <header class="mb-8 flex flex-row gap-4">
             <div class="flex-1">
               <UBreadcrumb
-                class="bg-[var(--ui-bg-elevated)] not-prose mb-2" :items="items" :ui="{
+                class="bg-(--ui-bg-elevated) not-prose mb-2" :items="items" :ui="{
                   list: 'm-0 p-0 h-fit',
                 }"
               >
                 <template #separator>
-                  <span class="mx-0.5 text-[var(--ui-text-muted)]">/</span>
+                  <span class="mx-0.5 text-(--ui-text-muted)">/</span>
                 </template>
               </UBreadcrumb>
               <h1 ref="titleEl" class="text-3xl font-bold mb-4">
@@ -91,7 +91,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
 
               <div
                 class="flex flex-wrap items-center *:flex
-            *:items-center *:justify-center gap-4 text-sm text-[var(--ui-text-muted)]
+            *:items-center *:justify-center gap-4 text-sm text-(--ui-text-muted)
              *:bg-white *:dark:bg-gray-700 *:px-1.5 *:py-1 *:rounded-md"
               >
                 <UPopover mode="hover">
@@ -151,7 +151,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
           <ArticleCopyright :page="page" />
         </article>
         <!-- 文章底部区域 -->
-        <div class="w-full mt-16 border-t border-[var(--ui-border)] pt-8">
+        <div class="w-full mt-16 border-t border-(--ui-border) pt-8">
           <!-- 文章导航 -->
           <nav class="flex justify-between mb-16">
             <UButton
@@ -199,7 +199,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
 
             <div v-show="showComments" class="min-h-[200px]">
               <!-- 这里将来放置评论组件 -->
-              <p class="text-center text-[var(--ui-text-muted)]">
+              <p class="text-center text-(--ui-text-muted)">
                 评论功能开发中...
               </p>
             </div>
@@ -211,7 +211,7 @@ const { data: surroundData } = await useAsyncData('article-surround', () => {
         <!-- 左侧目录 -->
         <div
           v-if="page.body.toc?.links"
-          class="sticky top-4 w-full max-h-[calc(100vh-2rem)] h-fit overflow-y-auto bg-[var(--ui-bg-muted)] p-4"
+          class="sticky top-4 w-full max-h-[calc(100vh-2rem)] h-fit overflow-y-auto bg-(--ui-bg-muted) p-4"
         >
           <div class="flex items-center mb-4">
             <UIcon name="i-material-symbols:two-pager" class="mr-2 size-5" />

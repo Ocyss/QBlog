@@ -78,7 +78,7 @@ const icon = computed(() => {
   <div
     v-if="data"
     :key="data.feed.title"
-    class="not-prose rounded-lg text-left bg-[var(--ui-bg)] flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-[var(--ui-bg)]"
+    class="not-prose rounded-lg text-left bg-(--ui-bg) flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-(--ui-bg)"
   >
     <div
       class="mb-2 text-lg font-semibold

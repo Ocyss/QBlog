@@ -12,7 +12,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <header class="w-screen overflow-x-clip flex items-center py-3 h-18 justify-between sticky top-0 left-0 right-0 z-40 bg-[var(--ui-bg-elevated)]">
+  <header class="w-screen overflow-x-clip flex items-center py-3 h-18 justify-between sticky top-0 left-0 right-0 z-40 bg-(--ui-bg-elevated)">
     <div class="flex items-center justify-center h-full space-x-4 pr-2 pl-4">
       <UButton
         class="flex items-center space-x-2 px-3 py-1.5 rounded-full u-float-btn font-bold h-8"
@@ -26,7 +26,7 @@ const isDark = computed({
         <NavigationHeader />
       </slot>
     </div>
-    <div class="flex items-center justify-center h-full space-x-4 pl-2 pr-4 bg-[var(--ui-bg-elevated)] z-30">
+    <div class="flex items-center justify-center h-full space-x-4 pl-2 pr-4 bg-(--ui-bg-elevated) z-30">
       <ClientOnly>
         <UButton
           :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
