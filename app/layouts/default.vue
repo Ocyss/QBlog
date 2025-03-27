@@ -29,7 +29,7 @@ onMounted(() => {
     <slot name="header">
       <AppHeader />
     </slot>
-    <div ref="mainContent" class="overflow-y-auto" :class="layoutProps.ui?.main">
+    <div ref="mainContent" class="overflow-y-auto scrollbar-thin" :class="layoutProps.ui?.main">
       <slot data-lenis-prevent />
       <slot name="footer">
         <AppFooter />

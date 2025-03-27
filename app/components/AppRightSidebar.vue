@@ -28,7 +28,7 @@ const contentStyle = computed(() => ({
             <SearchBar class="px-3" />
           </div>
 
-          <div class="flex-1 overflow-y-auto scrollbar-hidden px-3">
+          <div class="flex-1 overflow-y-auto scrollbar-none px-3">
             <ArticleList />
           </div>
         </div>

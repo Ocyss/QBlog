@@ -28,6 +28,11 @@ export default defineNuxtConfig({
     },
     '/article/**': { isr: true },
   },
+  app: {
+    rootAttrs: {
+      class: 'bg-(--ui-bg) scrollbar-thin',
+    },
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   modules: [
@@ -90,7 +95,7 @@ export default defineNuxtConfig({
       },
     },
     renderer: {
-      anchorLinks: { h1: true, h2: true, h3: true, h4: true },
+      anchorLinks: { h1: true, h2: true, h3: true },
     },
     watch: {
       enabled: true,

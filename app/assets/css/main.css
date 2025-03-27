@@ -1,9 +1,12 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@import "./scrollbar.css";
-
 @plugin "@tailwindcss/typography";
+
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+}
+
 
 @import 'lenis/dist/lenis.css';
 
@@ -103,16 +106,17 @@
   h2{
     &::after{
       content: "§";
-      @apply text-(--ui-text-highlighted) ms-2;
+      @apply text-(--ui-primary) ms-2;
     }
   }
   h3{
     &::before{
       content: "#";
-      @apply text-(--ui-text-highlighted) me-2;
+      @apply text-(--ui-primary) me-2;
     }
   }
 }
+
 
 .u-float-btn {
   @apply bg-white text-(--ui-bg-inverted) hover:bg-gray-300
@@ -120,7 +124,6 @@
   shadow-[2px_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_12px_rgba(0,0,0,0.15)]
   dark:shadow-[2px_2px_8px_rgba(0,0,0,0.3)] dark:hover:shadow-[4px_4px_12px_rgba(0,0,0,0.4)]
 }
-
 
 .heading-anchor {
   @apply no-underline hover:underline
