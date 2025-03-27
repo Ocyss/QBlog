@@ -69,34 +69,25 @@ function copyFilename() {
 </script>
 
 <template>
-  <div class="my-6 overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
-    <div class="header flex items-center justify-between bg-gray-800 px-4 py-3 text-gray-200">
+  <div class="my-6 overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl group">
+    <div class="header flex items-center rounded-t-[calc(var(--ui-radius)*1.5)] justify-between bg-(--ui-bg) px-4 py-3 text-(--ui-text) border border-(--ui-border-muted)">
       <div class="flex items-center">
         <UIcon v-if="icon" :name="icon" class="mr-2 text-gray-400" />
-        <span class="font-mono text-sm font-medium">{{ filename ?? language }}</span>
+        <span class="font-mono text-sm/6 font-medium">{{ filename ?? language }}</span>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         <UTooltip text="复制代码">
-          <UButton icon="heroicons:document-duplicate" variant="ghost" size="xs" @click="copyCode" />
+          <UButton icon="heroicons:document-duplicate" color="neutral" variant="outline" size="xs" @click="copyCode" />
         </UTooltip>
         <UTooltip v-if="filename" text="复制文件名">
-          <UButton icon="heroicons:document-text" variant="ghost" size="xs" @click="copyFilename" />
+          <UButton icon="heroicons:document-text" color="neutral" variant="outline" size="xs" @click="copyFilename" />
         </UTooltip>
       </div>
     </div>
-    <div class="relative group">
+    <div class="relative overflow-hidden rounded-b-[calc(var(--ui-radius)*1.5)]  border border-t-0 border-(--ui-border-muted)">
       <pre class="overflow-x-auto font-mono text-sm" :class="[props.class]">
         <slot />
       </pre>
-      <div class="absolute right-4 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-        <UTooltip text="复制代码">
-          <UButton
-            icon="heroicons:document-duplicate" variant="ghost" size="xs"
-            class="bg-gray-800/70 text-gray-300 hover:bg-gray-700 hover:text-white backdrop-blur-sm transition-all"
-            @click="copyCode"
-          />
-        </UTooltip>
-      </div>
     </div>
   </div>
 </template>

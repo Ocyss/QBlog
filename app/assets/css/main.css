@@ -70,7 +70,12 @@
       display: none;
     }
   }
-
+  pre {
+    @apply m-0 rounded-none p-0 pe-0 ps-0 whitespace-normal;
+    code {
+      @apply py-3 px-4 block rounded-none whitespace-pre border-0;
+    }
+  }
   blockquote {
     /* Remove extra quotes */
     p {
