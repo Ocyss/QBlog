@@ -25,3 +25,6 @@ logs
 
 /temp.local
 .eslintcache
+
+/image
+/certs

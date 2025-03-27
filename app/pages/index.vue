@@ -59,12 +59,13 @@ useTyped(typedRef, {
                     <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300">Python</span>
                   </div>
                 </div>
+
                 <div class="w-48 h-48 relative group select-none">
-                  <div
-                    class="w-full h-full absolute inset-0 rounded-full
-                  bg-gradient-to-r from-green-400 to-blue-500 opacity-75
-                  blur-xl group-hover:scale-110 group-hover:rotate-180 transition-all
-                  duration-500"
+                  <GlowEffect
+                    :colors="['#FF5733', '#33FF57', '#3357FF', '#F1C40F']"
+                    mode="colorShift"
+                    class="rounded-full blur-xl"
+                    :duration="8"
                   />
                   <img
                     src="~/assets/img/avatar.jpg"

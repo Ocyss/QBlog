@@ -31,6 +31,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   modules: [
+    'motion-v/nuxt',
     '@nuxt/ui',
     '@nuxt/eslint',
     '@vueuse/nuxt',
@@ -115,5 +116,12 @@ export default defineNuxtConfig({
     // enabled: false,
     // logErrors: true,
     // tag: 'website-variation-123',
+  },
+
+  devServer: {
+    https: {
+      key: './certs/localhost-key.pem',
+      cert: './certs/localhost.pem',
+    },
   },
 })
