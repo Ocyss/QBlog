@@ -8,6 +8,7 @@ useSeoMeta({
 <template>
   <UApp>
     <ImagePreview>
+      <NuxtLoadingIndicator class="z-60" />
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>

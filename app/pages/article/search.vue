@@ -37,6 +37,8 @@ async function handleSearch(query: string) {
       let r = groupedResults.get(path)
       if (!r) {
         const doc = await queryCollection('article').path(path).first()
+        if (!doc)
+          return
         r = {
           ...doc,
           searchScoreTotal: 0,

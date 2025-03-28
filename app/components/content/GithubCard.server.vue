@@ -92,7 +92,7 @@ function ActionLink({ name, link, icon }: { name: string, link: string, icon: st
   <div
     v-if="project"
     :key="project.title"
-    class="not-prose rounded-lg text-left bg-(--ui-bg) flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-(--ui-bg)"
+    class="not-prose relative rounded-lg text-left bg-(--ui-bg) flex flex-col p-6 shadow-sm hover:scale-105 transition-transform duration-300 dark:bg-(--ui-bg)"
   >
     <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
       <img v-if="project.avatar" :src="project.avatar" alt="avatar" class="size-6 rounded-full">
